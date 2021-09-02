@@ -35,7 +35,7 @@ let store = {
         },
 
         newPostText: "",
-        sidebar: {}
+        sidebar: { }
     },
 
     _callSubsriber() {
