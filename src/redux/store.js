@@ -12,7 +12,7 @@ let store = {
                 { id: 4, message: '3333334444444', countLike: '0', countDislike: '2' },
                 { id: 5, message: '5555555333333', countLike: '7', countDislike: '1' }
             ],
-            newPostText: 'IT-Camasutra'
+            newPostText: 'введите текст'
         },
         dialogsPage: {
 
