@@ -11,7 +11,7 @@ let initialState = {
         { id: 5, message: '5555555333333', countLike: '7', countDislike: '1' }
     ],
     newPostText: 'введите текст',
-    prfile: null
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -38,7 +38,7 @@ const profileReducer = (state = initialState, action) => {
         case SET_USER_PROFILE: {
             return {
                 ...state,
-                profile: action.prfile
+                profile: action.profile
             }
         }
         default:
@@ -60,10 +60,10 @@ export const updateNewPostTextActionCreator = (text) => {
     }
 };
 
-export const setUserProfile = (prfile) => {
+export const setUserProfile = (profile) => {
     return {
         type: SET_USER_PROFILE,
-        prfile
+        profile
     }
 };
 
