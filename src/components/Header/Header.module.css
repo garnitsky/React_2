@@ -8,6 +8,11 @@
 }
 
 .loginBlock {
-    float: right;
-    color: white;
+
+    float:right;
+    display:inline;
+}
+
+.loginBlock a {
+    color:white;
 }
