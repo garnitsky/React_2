@@ -7,19 +7,16 @@ import Preloader from '../preloader/preloader';
 
 class UsersContainer extends React.Component {
     componentDidMount() {
-        debugger
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
 
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
 
         this.props.getUsers(pageNumber, this.props.pageSize);
-
     }
 
     render() {
-
         return <>
             {this.props.isFetching ? <Preloader /> : null}
             <Users

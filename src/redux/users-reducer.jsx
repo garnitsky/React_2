@@ -99,17 +99,32 @@ export const getUsers = (currentPage, pageSize) => {
     }
 };
 
-export const follow = (currentPage, pageSize) => {
-
+export const follow = (id) => {
     return (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
-            dispatch(toggleIsFetching(false));
-            dispatch(setUsers(data.items));
-            dispatch(setTotalUsersCount(data.totalCount));
-        });
+        dispatch(toggleFollowingProgress(true, id));
+        usersAPI.follow(id)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(followSuccsess(id))
+                }
+                dispatch(toggleFollowingProgress(false, id));
+            });
     }
 };
+
+export const unfollow = (id) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingProgress(true, id));
+        usersAPI.unFollow(id)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(unfollowSuccess(id))
+                }
+                dispatch(toggleFollowingProgress(false, id));
+            });
+    }
+};
+
 
 
 
