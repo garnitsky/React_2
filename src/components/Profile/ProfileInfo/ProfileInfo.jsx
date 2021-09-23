@@ -1,5 +1,6 @@
 import classes from './ProfileInfo.module.css';
 import Preloader from './../../preloader/preloader';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 
@@ -10,10 +11,8 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div>
-                <img className={classes.photoHead} alt='ddd' src="https://klike.net/uploads/posts/2020-09/1599896332_2.jpg" />
-            </div>
-            <div>
                 <img src={props.profile.photos.large} />
+                <ProfileStatus status={'привет'} />
             </div>
             <div>
                 new post
